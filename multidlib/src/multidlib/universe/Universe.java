@@ -1,7 +1,7 @@
 package multidlib.universe;
 
-import multidlib.elemental.Coordinate;
-import multidlib.elemental.CoordinateTuple;
+import multidlib.elemental.Position;
+import multidlib.elemental.PositionTuple;
 import multidlib.elemental.Particle;
 
 import java.util.List;
@@ -10,8 +10,8 @@ import java.util.LinkedList;
 public class Universe implements Runnable {
 	// particles in system
 	public final LinkedList<Particle> particles;
-	public final LinkedList<List<Coordinate>> coordinates;
-	public final LinkedList<List<CoordinateTuple>> lines;
+	public final LinkedList<List<Position>> coordinates;
+	public final LinkedList<List<PositionTuple>> lines;
 	
 	// threading
 	private int aid;
@@ -30,8 +30,8 @@ public class Universe implements Runnable {
 	public Universe(float s, int t, boolean sc){
 		// initialize system
 		particles = new LinkedList<Particle>();
-		coordinates = new LinkedList<List<Coordinate>>();
-		lines = new LinkedList<List<CoordinateTuple>>();
+		coordinates = new LinkedList<List<Position>>();
+		lines = new LinkedList<List<PositionTuple>>();
 		// threading
 		aid = 0;
 		cid = 0;

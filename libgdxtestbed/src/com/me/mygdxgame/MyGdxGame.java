@@ -32,11 +32,6 @@ public class MyGdxGame implements ApplicationListener {
     
     public BitmapFont font;
     public SpriteBatch batch;
-    public float scale;
-    
-    public MyGdxGame(float s){
-    	scale = s;
-    }
 
     @Override
     public void create() {
@@ -53,9 +48,10 @@ public class MyGdxGame implements ApplicationListener {
         renderer = new ShapeRenderer();
     	renderer.setProjectionMatrix(cam.combined);
         
-        int threads = 2;
-        int particles = 16;
+        int threads = 4;
+        int particles = 4;
         int dimensions = 4;
+        float scale = .0001f;
         boolean sync = true;
         universe = new Universe(scale, threads, sync);
         Random random = new Random();
